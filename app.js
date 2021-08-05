@@ -12,9 +12,10 @@ app.get('/', (req, res) => {
 
 
 app.get('/getAddress',function(req,res,next){
-    res.send(req.query)
     let data = JSON.stringify(req.query);
     fs.writeFileSync('./address/'+String(req.query.address+".json"), data);
+    // res.send(req.query)
+    res.send("success")
   })
 
 
